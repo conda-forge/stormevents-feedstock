@@ -1,5 +1,5 @@
 {% set name = "stormevents" %}
-{% set version = "1.3.2.2" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stormevents-{{ version }}.tar.gz
-  sha256: 0b7ea88e22ae1d72a2be3b49f00045eeb85671c5e92783a1bdbf72db76891bd5
+  sha256: 7bf56ffb9b44e19c75024215be9099b36f07b09752eec0774e1e6b331330343a
 
 build:
   noarch: python
