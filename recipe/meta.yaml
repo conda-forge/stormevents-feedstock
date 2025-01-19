@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stormevents-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/stormevents-{{ version }}.tar.gz
   sha256: 324fed1717988ec4a8fc4e9084fc3169d027ac8e3b4c61bcda104e93f35140c2
 
 build:
@@ -14,12 +14,12 @@ build:
   script_env:
     - __version__={{ version }}
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - beautifulsoup4
     - geopandas
@@ -27,7 +27,7 @@ requirements:
     - numpy
     - pandas
     - pyproj >=2.6
-    - python >=3.6
+    - python >={{ python_min }}
     - python-dateutil
     - requests
     - shapely
@@ -41,6 +41,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/oceanmodeling/StormEvents
